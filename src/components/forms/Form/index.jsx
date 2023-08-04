@@ -18,7 +18,6 @@ export const Form = ({ addNote }) => {
     return (
         <section className="margin">
             <form onSubmit={submit}>
-                <p>dsds</p>
                 <TextArea
                     label="Descrição"
                     placeholder="Digite aqui sua descrição"
