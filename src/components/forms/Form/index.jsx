@@ -12,7 +12,9 @@ export const Form = ({ addNote }) => {
     const submit = (event) => {
         event.preventDefault()
         console.log({ description, inputNumber, select })
-        addNote({ description, inputNumber, select })
+        addNote(select === "Entrada"
+            ? { description, inputNumber, select }
+            : { description, inputNumber: -inputNumber, select })
         setDescription("")
         setinputNumber("")
         setSelect("")
@@ -37,13 +39,11 @@ export const Form = ({ addNote }) => {
                     setValue={setinputNumber}
                 />
                 {/* <SelectForm setValue={setSelect} value={select} /> */}
-
-                <select  onChange={(event) => setSelect(event.target.value)}>
+                <select onChange={(event) => setSelect(event.target.value)}>
                     <option value="Entrada">Entrada</option>
                     <option value="Despesa">Despesa</option>
                 </select>
                 <button className="btn btnText" type="submit">Inserir Valor</button>
-                
             </form>
         </section>
     )
