@@ -17,15 +17,11 @@ export const TodoSections = () => {
         setnoteList(newNoteList)
     }
 
-    // const sumMoney = (value) => {
-    //     const sum = 
-    // }
-
     return (
         <>
             <Form addNote={addNote} />
             <List noteList={noteList} removeNote={removeNote} />
-            <TotalMoney />
+            <TotalMoney noteList={noteList} />
         </>
     )
 }

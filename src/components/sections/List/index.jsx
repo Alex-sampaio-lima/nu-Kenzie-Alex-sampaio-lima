@@ -1,7 +1,7 @@
 import { ListSection } from "./ListSection"
 
-
 export const List = ({ noteList, removeNote }) => {
+
     return (
         <section className="margin">
             <ul>
