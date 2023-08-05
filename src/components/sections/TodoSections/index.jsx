@@ -25,13 +25,6 @@ export const TodoSections = () => {
                 <List noteList={noteList} removeNote={removeNote} />
             </div>
             <TotalMoney noteList={noteList} />
-            {/* <section className="margin">
-                <div>
-                    <h1>Valor Total</h1>
-                    <p>O valor se refere ao saldo</p>
-                    <span>R$ {sumMoney}</span>
-                </div>
-            </section> */}
         </>
     )
 }

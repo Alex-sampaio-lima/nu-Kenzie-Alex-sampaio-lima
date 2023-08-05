@@ -10,7 +10,7 @@ export const List = ({ noteList, removeNote }) => {
                         key={note.id}
                         id={note.id}
                         description={note.description}
-                        inputNumber={note.inputNumber}
+                        inputNumber={note.inputNumber.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                         select={note.select}
                         removeNote={removeNote}
                     />

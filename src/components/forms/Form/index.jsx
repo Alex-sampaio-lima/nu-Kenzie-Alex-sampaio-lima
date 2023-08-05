@@ -2,7 +2,6 @@ import { useState } from "react"
 import { Input } from "../Input"
 import { TextArea } from "../TextArea"
 import { SelectForm } from "./SelectForm"
-import { TotalMoney } from "../../sections/TotalMoney"
 
 export const Form = ({ addNote }) => {
     const [description, setDescription] = useState("")
@@ -11,13 +10,11 @@ export const Form = ({ addNote }) => {
 
     const submit = (event) => {
         event.preventDefault()
-        console.log({ description, inputNumber, select })
         addNote(select === "Entrada"
-            ? { description, inputNumber, select }
+            ? { description, inputNumber: Number(inputNumber), select }
             : { description, inputNumber: -inputNumber, select })
         setDescription("")
         setinputNumber("")
-        setSelect("")
     }
 
     return (
@@ -38,11 +35,11 @@ export const Form = ({ addNote }) => {
                     value={inputNumber}
                     setValue={setinputNumber}
                 />
-                {/* <SelectForm setValue={setSelect} value={select} /> */}
-                <select onChange={(event) => setSelect(event.target.value)}>
+                <SelectForm setValue={setSelect} />
+                {/* <select onChange={(event) => setSelect(event.target.value)}>
                     <option value="Entrada">Entrada</option>
                     <option value="Despesa">Despesa</option>
-                </select>
+                </select> */}
                 <button className="btn btnText" type="submit">Inserir Valor</button>
             </form>
         </section>
