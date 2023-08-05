@@ -12,10 +12,19 @@ export const TodoSections = () => {
         setnoteList([...noteList, newNote])
     }
 
+    const removeNote = (removeId) => {
+        const newNoteList = noteList.filter(note => note.id !== removeId)
+        setnoteList(newNoteList)
+    }
+
+    // const sumMoney = (value) => {
+    //     const sum = 
+    // }
+
     return (
         <>
             <Form addNote={addNote} />
-            <List noteList={noteList} />
+            <List noteList={noteList} removeNote={removeNote} />
             <TotalMoney />
         </>
     )
