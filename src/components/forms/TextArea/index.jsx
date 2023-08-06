@@ -14,5 +14,5 @@ export const TextArea = ({ id, label, placeholder, value, setValue }) => {
                 onChange={(event) => setValue(event.target.value)}
             ></textarea>
         </div>
-    );
-};
+    )
+}
