@@ -1,0 +1,24 @@
+.formContainer {
+    display: flex;
+    width: 22.1875rem;
+    height: 27.125rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    border: solid 1px var(--color-gray-1);
+    background-color: #FFFFFF;
+}
+
+.pForm {
+    display: flex;
+    width: 18rem;
+    justify-content: flex-start;
+    color: var(--color-gray-2);
+}
+
+.spanForm {
+    display: flex;
+    width: 18rem;
+    justify-content: flex-start;
+}

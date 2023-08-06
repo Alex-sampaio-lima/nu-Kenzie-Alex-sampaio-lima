@@ -2,7 +2,6 @@ export const TotalMoney = ({ noteList }) => {
 
     const sumMoney = noteList.reduce((prevValue, number) => prevValue + number.inputNumber, 0)
 
-
     return (
         <section className="margin">
             <div>

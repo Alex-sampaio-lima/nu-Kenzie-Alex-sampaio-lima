@@ -1,10 +1,11 @@
 import { ListSection } from "./ListSection"
+import style from "../List/style.module.scss"
 
 export const List = ({ noteList, removeNote }) => {
 
     return (
         <section className="margin">
-            <ul>
+            <ul className={`${style.ulListSection}`}>
                 {noteList.map((note) => (
                     <ListSection
                         key={note.id}

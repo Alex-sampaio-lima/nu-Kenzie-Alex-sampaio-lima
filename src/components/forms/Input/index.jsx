@@ -1,10 +1,10 @@
 export const Input = ({ label, id, type, placeholder, value, setValue }) => {
 
     return (
-        <div>
-            <label htmlFor={id}>{label}</label>
+        <div className="spaceTextInputs">
+            <label className="headline spaceTextInputs titleInputs" htmlFor={id}>{label}</label>
             <input
-                className="input Money"
+                className="input Money headline"
                 placeholder={placeholder}
                 type={type}
                 name={id}

@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Input } from "../Input"
 import { TextArea } from "../TextArea"
 import { SelectForm } from "./SelectForm"
+import style from "../Form/style.module.scss"
 
 export const Form = ({ addNote }) => {
     const [description, setDescription] = useState("")
@@ -19,7 +20,7 @@ export const Form = ({ addNote }) => {
 
     return (
         <section className="margin">
-            <form onSubmit={submit}>
+            <form className={`${style.formContainer}`} onSubmit={submit}>
                 <TextArea
                     label="Descrição"
                     placeholder="Digite aqui sua descrição"
@@ -27,6 +28,7 @@ export const Form = ({ addNote }) => {
                     value={description}
                     setValue={setDescription}
                 />
+                <p className={`${style.pForm} headline`}>Ex: Compra de roupas</p>
                 <Input
                     label="Valor (R$)"
                     placeholder="digite um novo valor "
@@ -35,11 +37,8 @@ export const Form = ({ addNote }) => {
                     value={inputNumber}
                     setValue={setinputNumber}
                 />
+                 <span className={`${style.spanForm} headline titleInputs`}>Tipo de valor</span>                   
                 <SelectForm setValue={setSelect} />
-                {/* <select onChange={(event) => setSelect(event.target.value)}>
-                    <option value="Entrada">Entrada</option>
-                    <option value="Despesa">Despesa</option>
-                </select> */}
                 <button className="btn btnText" type="submit">Inserir Valor</button>
             </form>
         </section>

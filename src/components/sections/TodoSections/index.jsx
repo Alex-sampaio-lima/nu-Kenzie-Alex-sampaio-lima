@@ -3,6 +3,7 @@ import { Form } from "../../forms/Form"
 import { List } from "../List"
 import { TotalMoney } from "../TotalMoney"
 import { v4 as uuivd4 } from "uuid"
+import style from "../TodoSections/style.module.scss"
 
 export const TodoSections = () => {
     const [noteList, setnoteList] = useState([])
@@ -20,7 +21,7 @@ export const TodoSections = () => {
 
     return (
         <>
-            <div>
+            <div className={`${style.containerForm} margin`}>
                 <Form addNote={addNote} />
                 <List noteList={noteList} removeNote={removeNote} />
             </div>

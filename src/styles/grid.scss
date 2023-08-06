@@ -1,8 +1,17 @@
 .margin {
     width: 100%;
-    max-width: 1500px;
-    height: 88px;
+    max-width: 1250px;
     margin: 0 auto;
-    padding: 0 10% 0 10%;
-    margin-bottom: 10%;
+    margin-bottom: 2%;
+}
+
+.titleInputs {
+    margin-bottom: 1rem;
+
+}
+
+.spaceTextInputs {
+    display: flex;
+    gap: 0px;
+    flex-direction: column;
 }

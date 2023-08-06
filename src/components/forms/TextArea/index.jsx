@@ -1,9 +1,11 @@
+import style from "../TextArea/style.module.scss"
+
 export const TextArea = ({ id, label, placeholder, value, setValue }) => {
     return (
-        <div>
-            <label htmlFor={id}>{label}</label>
-            <textarea 
-                className="input Description"
+        <div className="spaceTextInputs">
+            <label className="headline titleInputs" htmlFor={id}>{label}</label>
+            <textarea
+                className={`${style.textArea} input Description headline`}
                 placeholder={placeholder}
                 name={id}
                 id={id}
