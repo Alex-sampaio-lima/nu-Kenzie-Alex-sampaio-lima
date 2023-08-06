@@ -4,7 +4,7 @@ export const Input = ({ label, id, type, placeholder, value, setValue }) => {
         <div className="spaceTextInputs">
             <label className="headline spaceTextInputs titleInputs" htmlFor={id}>{label}</label>
             <input
-                className="input Money headline"
+                className="input Money headline inputDesisted "
                 placeholder={placeholder}
                 type={type}
                 name={id}

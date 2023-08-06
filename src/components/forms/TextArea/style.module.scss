@@ -1,16 +1,5 @@
 .textArea {
     display: flex;
-    justify-content: flex-start;
-
-
-    ::placeholder {
-        text-align: center;
-        justify-content: flex-start;
-    }
-
-    .hide-placeholder {
-        display: none;
-    }
 }
 
 .TextAreaContainer {

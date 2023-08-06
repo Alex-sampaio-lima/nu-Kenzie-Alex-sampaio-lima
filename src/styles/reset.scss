@@ -19,8 +19,16 @@ img {
     max-width: 100%;
 }
 
-input {
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
+// input {
+//     background-color: transparent;
+//     border: none;
+//     border-radius: 0;
+// }
+
+input[type="number"] {
+
+    --webkit-outer-spin-button,
+    --webkit-inner-spin-button {
+        --webkit-appearance: none;
+    }
 }
