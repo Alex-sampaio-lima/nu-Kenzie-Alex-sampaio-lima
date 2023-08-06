@@ -2,7 +2,10 @@
     display: flex;
     gap: 1rem;
     flex-direction: column;
-    max-width: max-content;
-    width: 560px;
+    max-width: 680px;
+    height: 100px;
+}
 
+.titleContainer {
+    margin-bottom: 2rem;
 }

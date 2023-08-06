@@ -1,0 +1,17 @@
+.containerMoneyPrincipal {
+    display: flex;
+    justify-content: space-between;
+    width: 355px;
+    height: 96px;
+    gap: 1rem;
+}
+
+.titleMoneyContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.totalMoneyContainer {
+    display: flex;
+    align-items: flex-start;
+}

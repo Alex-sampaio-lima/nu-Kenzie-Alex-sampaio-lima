@@ -5,6 +5,7 @@ export const List = ({ noteList, removeNote }) => {
 
     return (
         <section className="margin">
+            <h1 className={`${style.titleContainer} title two`}>Resumo Financeiro</h1>
             <ul className={`${style.ulListSection}`}>
                 {noteList.map((note) => (
                     <ListSection

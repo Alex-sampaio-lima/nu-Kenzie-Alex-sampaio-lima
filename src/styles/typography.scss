@@ -20,7 +20,7 @@
 .btnText {
     color: #FFF;
     font-family: "Inter", sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
     line-height: normal;
 }
@@ -37,4 +37,13 @@
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1.4;
+}
+
+.numberTotalMoney {
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.875rem;
 }
