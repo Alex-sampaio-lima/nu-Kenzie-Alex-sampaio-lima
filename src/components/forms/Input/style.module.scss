@@ -44,6 +44,12 @@
     border: none;
     outline: none;
 
+    // o destaque de foco fica no .control (borda arredondada), não no input
+    &:focus,
+    &:focus-visible {
+        outline: none;
+    }
+
     &::placeholder {
         color: #8A909B;
     }
