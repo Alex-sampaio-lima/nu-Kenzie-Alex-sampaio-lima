@@ -1,48 +1,62 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Input } from "../Input"
-import { TextArea } from "../TextArea"
-import { SelectForm } from "./SelectForm"
-import style from "../Form/style.module.scss"
+import { TypeToggle } from "./TypeToggle"
+import style from "./style.module.scss"
 
 export const Form = ({ addNote }) => {
     const [description, setDescription] = useState("")
-    const [inputNumber, setinputNumber] = useState("")
+    const [inputNumber, setInputNumber] = useState("")
     const [select, setSelect] = useState("Entrada")
+    const descriptionRef = useRef(null)
 
     const submit = (event) => {
         event.preventDefault()
-        addNote(select === "Entrada"
-            ? { description, inputNumber: Number(inputNumber), select }
-            : { description, inputNumber: -inputNumber, select })
+        const amount = Math.abs(Number(inputNumber))
+        const text = description.trim()
+        if (!text || !amount) return
+
+        addNote({
+            description: text,
+            inputNumber: select === "Entrada" ? amount : -amount,
+            select,
+        })
         setDescription("")
-        setinputNumber("")
+        setInputNumber("")
+        descriptionRef.current?.focus()
     }
 
     return (
-        <section className="margin">
-            <form className={`${style.formContainer}`} onSubmit={submit}>
-                <TextArea
+        <section className={`${style.formCard} card`} aria-labelledby="form-title">
+            <h2 className={style.title} id="form-title">Novo lançamento</h2>
+            <form className={style.form} onSubmit={submit}>
+                <Input
                     label="Descrição"
-                    placeholder="Digite aqui sua descrição"
+                    placeholder="Ex.: Compra de roupas"
+                    type="text"
                     id="description"
+                    maxLength={60}
+                    required
+                    autoComplete="off"
+                    inputRef={descriptionRef}
                     value={description}
                     setValue={setDescription}
                 />
-                <p className={`${style.pForm} headline`}>Ex: Compra de roupas</p>
                 <Input
-                    label="Valor (R$)"
-                    placeholder="digite um novo valor "
+                    label="Valor"
+                    prefix="R$"
+                    placeholder="0,00"
                     type="number"
+                    inputMode="decimal"
+                    min="0.01"
+                    step="0.01"
+                    required
                     id="inputNumber"
                     value={inputNumber}
-                    setValue={setinputNumber}
+                    setValue={setInputNumber}
                 />
-                 <span className={`${style.spanForm} headline titleInputs`}>Tipo de valor</span>                   
-                <SelectForm setValue={setSelect} />
-                <button className="btn btnText" type="submit">Inserir Valor</button>
+                <TypeToggle value={select} setValue={setSelect} />
+                <button className={style.submit} type="submit">Adicionar lançamento</button>
             </form>
         </section>
     )
 }
-
-

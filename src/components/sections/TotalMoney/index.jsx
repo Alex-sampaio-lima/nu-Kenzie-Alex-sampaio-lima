@@ -1,19 +1,30 @@
-import style from "../TotalMoney/style.module.scss"
+import { formatCurrency } from "../../../utils/formatCurrency"
+import style from "./style.module.scss"
 
 export const TotalMoney = ({ noteList }) => {
-
-    const sumMoney = noteList.reduce((prevValue, number) => prevValue + number.inputNumber, 0)
+    const income = noteList.reduce((sum, note) => (note.inputNumber > 0 ? sum + note.inputNumber : sum), 0)
+    const expense = noteList.reduce((sum, note) => (note.inputNumber < 0 ? sum - note.inputNumber : sum), 0)
+    const balance = income - expense
 
     return (
-        <section className="margin">
-            <div className={`${style.containerMoneyPrincipal}`}>
-                <div className={`${style.titleMoneyContainer}`}>
-                    <h1 className="title two">Valor Total</h1>
-                    <p className="headline">O valor se refere ao saldo</p>
-                </div>
-                <div className={`${style.totalMoneyContainer}`}>
-                    <span className="numberTotalMoney">{sumMoney.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
-                </div>
+        <section className={style.summary} aria-label="Resumo financeiro">
+            <div className={`${style.item} ${style.balance} card`}>
+                <h2 className={style.label}>Saldo</h2>
+                <p className={`${style.value} ${balance < 0 ? style.negative : ""}`}>{formatCurrency(balance)}</p>
+            </div>
+            <div className={`${style.item} card`}>
+                <h2 className={style.label}>
+                    <span className={`${style.dot} ${style.dotIncome}`} aria-hidden="true" />
+                    Entradas
+                </h2>
+                <p className={style.value}>{formatCurrency(income)}</p>
+            </div>
+            <div className={`${style.item} card`}>
+                <h2 className={style.label}>
+                    <span className={`${style.dot} ${style.dotExpense}`} aria-hidden="true" />
+                    Despesas
+                </h2>
+                <p className={style.value}>{formatCurrency(expense)}</p>
             </div>
         </section>
     )

@@ -1,5 +1,2 @@
-@import "./button.scss";
-@import "./global.scss";
-@import "./typography.scss";
-@import "./reset.scss";
-@import "./grid.scss";
+@use "./reset.scss";
+@use "./global.scss";

@@ -1,6 +1,22 @@
-.containerForm {
+.page {
     display: flex;
-    flex-direction: row;
-    height: 30rem;
-    width: 100%;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem 0 3rem;
+
+    @media (min-width: 48rem) {
+        gap: 1.5rem;
+        padding: 2.5rem 0 4rem;
+    }
+}
+
+.columns {
+    display: grid;
+    gap: 1.25rem;
+    align-items: start;
+
+    @media (min-width: 56rem) {
+        grid-template-columns: 22rem minmax(0, 1fr);
+        gap: 1.5rem;
+    }
 }

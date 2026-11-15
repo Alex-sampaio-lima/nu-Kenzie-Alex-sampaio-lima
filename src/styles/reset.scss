@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,26 +11,31 @@ ol {
     list-style: none;
 }
 
+button,
+input {
+    font: inherit;
+    color: inherit;
+}
+
 button {
     cursor: pointer;
     background-color: transparent;
     border: none;
 }
 
-img {
+img,
+svg {
+    display: block;
     max-width: 100%;
 }
 
-// input {
-//     background-color: transparent;
-//     border: none;
-//     border-radius: 0;
-// }
-
 input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
 
-    --webkit-outer-spin-button,
-    --webkit-inner-spin-button {
-        --webkit-appearance: none;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
     }
 }

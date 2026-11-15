@@ -1,24 +1,43 @@
-.formContainer {
+.formCard {
+    padding: 1.25rem;
+
+    @media (min-width: 48rem) {
+        padding: 1.5rem;
+    }
+
+    @media (min-width: 56rem) {
+        position: sticky;
+        top: 5.5rem;
+    }
+}
+
+.title {
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.form {
     display: flex;
-    width: 22.1875rem;
-    height: 27.125rem;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6875rem;
-    border: solid 0.0625rem var(--color-gray-1);
-    background-color: #FFFFFF;
+    gap: 1rem;
 }
 
-.pForm {
-    display: flex;
-    width: 18rem;
-    justify-content: flex-start;
-    color: var(--color-gray-2);
-}
+.submit {
+    height: 3rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: var(--color-primary-strong);
+    border-radius: var(--radius-sm);
+    transition: background-color 0.15s, transform 0.05s;
 
-.spanForm {
-    display: flex;
-    width: 18rem;
-    justify-content: flex-start;
+    &:hover {
+        background: var(--color-primary-hover);
+    }
+
+    &:active {
+        transform: scale(0.99);
+    }
 }

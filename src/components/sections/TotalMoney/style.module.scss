@@ -1,18 +1,74 @@
-.containerMoneyPrincipal {
-    display: flex;
-    justify-content: space-between;
-    width: 22.1875rem;
-    height: 6rem;
-    gap: 1rem;
+.summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+
+    @media (min-width: 48rem) {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 1.5rem;
+    }
 }
 
-.titleMoneyContainer {
+.item {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.25rem;
+    min-width: 0;
+    padding: 1rem 1.25rem;
+
+    @media (min-width: 48rem) {
+        padding: 1.25rem 1.5rem;
+    }
 }
 
-.totalMoneyContainer {
+.balance {
+    grid-column: 1 / -1;
+
+    @media (min-width: 48rem) {
+        grid-column: auto;
+    }
+
+    .value {
+        font-size: 2rem;
+    }
+}
+
+.label {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+}
+
+.dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: var(--radius-full);
+}
+
+.dotIncome {
+    background: var(--color-success);
+}
+
+.dotExpense {
+    background: var(--color-primary);
+}
+
+.value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+
+    @media (min-width: 48rem) {
+        font-size: 1.5rem;
+    }
+}
+
+.negative {
+    color: var(--color-primary-strong);
 }

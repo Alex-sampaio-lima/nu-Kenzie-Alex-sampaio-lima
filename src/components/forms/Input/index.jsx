@@ -1,17 +1,21 @@
-export const Input = ({ label, id, type, placeholder, value, setValue }) => {
+import style from "./style.module.scss"
 
+export const Input = ({ label, id, prefix, value, setValue, inputRef, ...rest }) => {
     return (
-        <div className="spaceTextInputs">
-            <label className="headline spaceTextInputs titleInputs" htmlFor={id}>{label}</label>
-            <input
-                className="input Money headline inputDesisted "
-                placeholder={placeholder}
-                type={type}
-                name={id}
-                id={id}
-                value={value}
-                onChange={(event => setValue(event.target.value))}
-            />
+        <div className={style.field}>
+            <label className={style.label} htmlFor={id}>{label}</label>
+            <div className={style.control}>
+                {prefix ? <span className={style.prefix} aria-hidden="true">{prefix}</span> : null}
+                <input
+                    className={style.input}
+                    name={id}
+                    id={id}
+                    ref={inputRef}
+                    value={value}
+                    onChange={(event) => setValue(event.target.value)}
+                    {...rest}
+                />
+            </div>
         </div>
     )
 }
